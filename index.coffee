@@ -15,9 +15,19 @@ $ ->
 
 		$(week).css(backgroundColor: color)
 		if index % 52 == 0
-			year = Math.ceil((index + 1) / 52)
+			year = Math.ceil(index / 52)
 			$(week).text(year)
-	
+
+	$('#panic-btn').click (e) ->
+		bday = new Date($("#bday")[0].value)
+		currentTime = new Date();
+		weeksCount = Math.ceil((currentTime - bday) / 1000 / 60 / 60 / 24 / 7)
+		$('.week').slice(0, weeksCount).each (index, el) =>
+			delayedPaniced = -> 
+				el.classList.add("paniced")
+			setTimeout(delayedPaniced, index)
+			$('#monster').removeClass("disable")
+		
 	$('.week').click (e) ->
 		$(e.currentTarget).toggleClass('clicked')
 	$('.week').addClass('interactive')

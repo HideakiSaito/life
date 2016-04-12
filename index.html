@@ -1,7 +1,8 @@
 <!-- your life -->
 <!-- Srdjan Prodanovic, srdjan@ljudje.si -->
 <!-- HTML infographic inspired by Tim Urban's Life Calendar: http://waitbutwhy.com/2014/05/life-weeks.html -->
-<!-- Source code: http://github.com/some1else/life -->
+<!-- Panic Mode addition by Elad Gariany: https://www.youtube.com/watch?v=arj7oStGLkU -->
+<!-- Source code: http://github.com/eladg/life -->
 <html>
 <head>
 <title>your life</title>
@@ -25,9 +26,14 @@
 	p {
 		margin-bottom: 4rem;
 	}
+
+	.panic-div {
+		margin-bottom: 4rem;
+	}
 	
 	.life {
 		border: 1px solid white;
+		margin: 1rem;
 	}
 
 	.week {
@@ -48,6 +54,20 @@
 		background-color: #FA8E6D !important;
 	}
 
+	.paniced {
+		background-color: #FF3300 !important;
+	}
+
+	.disable {
+		display: none;
+	}
+
+	#monster {
+		position: absolute;
+		top: 0;
+		z-index: 0;
+	}
+
 	@media (max-width: 720px) {
 		.week {
 			color: transparent;
@@ -58,8 +78,16 @@
 </style>
 </head>
 <body>
+<div id="monster" class="disable">
+	<img src="monster.gif"></img>
+</div>
 <h1>your life</h1>
 <p>every rectangle represents a week,<br/>every row represents a year</p>
+<div class="panic-div">
+	<input id="bday" type="date" value="1986-11-07"></input>
+	<button id="panic-btn">Panic Mode</button>
+</p>
+
 <div class='life'>
 	<div class='year'>
 		<div class='week'></div><div class='week'></div><div class='week'></div><div class='week'></div><div class='week'></div><div class='week'></div><div class='week'></div><div class='week'></div><div class='week'></div><div class='week'></div><div class='week'></div><div class='week'></div><div class='week'></div><div class='week'></div><div class='week'></div><div class='week'></div><div class='week'></div><div class='week'></div><div class='week'></div><div class='week'></div><div class='week'></div><div class='week'></div><div class='week'></div><div class='week'></div><div class='week'></div><div class='week'></div><div class='week'></div><div class='week'></div><div class='week'></div><div class='week'></div><div class='week'></div><div class='week'></div><div class='week'></div><div class='week'></div><div class='week'></div><div class='week'></div><div class='week'></div><div class='week'></div><div class='week'></div><div class='week'></div><div class='week'></div><div class='week'></div><div class='week'></div><div class='week'></div><div class='week'></div><div class='week'></div><div class='week'></div><div class='week'></div><div class='week'></div><div class='week'></div><div class='week'></div><div class='week'></div>
